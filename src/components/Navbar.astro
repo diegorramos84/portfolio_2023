@@ -1,0 +1,27 @@
+---
+import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
+import ModeToggle from '@/components/theme/theme-toggle';
+---
+
+<header>
+  <div class="lg:flex py-5 px-20 gap-5">
+    <Astronav>
+      <div class="flex w-full justify-between">
+        <h1 class="text-4xl font-custom">Diego Ramos</h1>
+        <div class="block lg:hidden">
+          <MenuIcon class="w-4 h-4 text-white-800" />
+        </div>
+      </div>
+        <MenuItems class="hidden lg:flex">
+          <ul class="flex flex-col lg:flex-row lg:gap-5">
+            <li><a href="/">[home]</a></li>
+            <li><a href="/projects">[projects]</a></li>
+            <li><a href="/about">[about]</a></li>
+            <li><a href="/contact">[contact]</a></li>
+            <li><a href="/resume">[resume]</a></li>
+          </ul>
+        </MenuItems>
+        <ModeToggle client:only/>
+    </Astronav>
+  </div>
+</header>

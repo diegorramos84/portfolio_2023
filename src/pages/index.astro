@@ -1,0 +1,30 @@
+---
+import '@/styles/globals.css'
+import Layout from '../layouts/Layout.astro';
+import { Button } from '@/components/ui/button';
+import { CodeIcon } from '@radix-ui/react-icons'
+import Skills from '../components/Skills';
+---
+
+<Layout>
+  <div class="hero py-20 px-20 w-100 flex justify-center">
+    <div class="land-intro lg:w-1/2 sm:w-100">
+      <h1 class="py-5 text-6xl">Full Stack Developer</h1>
+      <div>
+        <p>I'm a Full Stack Engineer with a proficiency in Python and in the MERN stack</p>
+        <p></p>
+      </div>
+      <div class="my-8">
+        <Button className="lg:text-2xl font-bold lg:py-7">
+          See my work
+        </Button>
+      </div>
+      <div class="flex justify-center lg:justify-start mt-10">
+        <Skills client:only="react"/>
+      </div>
+    </div>
+    <div class="land-image lg:block hidden m-1">
+      <img class="w-100 h-auto rounded-full hover:scale-105" src="/diego_.png" alt="diego_profile_img">
+    </div>
+  </div>
+</Layout>

@@ -1,0 +1,26 @@
+---
+import Header from "../components/Header.astro";
+import Navbar from "../components/Navbar.astro";
+import '@fontsource/ibm-plex-sans';
+import '@fontsource/shadows-into-light';
+import ThemeProvider from '@/components/theme/ThemeProvider.astro'
+const { title, seoDesc } = Astro.props
+---
+
+<!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <Header title={title} seoDesc={seoDesc}/>
+      <ThemeProvider />
+    </head>
+    <Navbar class="lg:flex"/>
+    <slot />
+    <style>
+      body {
+        font-family: 'IBM Plex Sans', sans-serif;
+      },
+      .hidden {
+        display: none
+      }
+    </style>
+  </html>
