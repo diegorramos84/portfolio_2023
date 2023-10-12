@@ -11,13 +11,10 @@ import {
 const ModeToggle = () => {
 
   const setTheme = (theme) => {
-    // try to get current theme from local storage
     const currentTheme = localStorage.getItem('theme') || 'dark'
 
-    // remove current theme from document
     document.documentElement.classList.remove(currentTheme)
 
-    // get the user system default theme
     const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches? 'dark' : 'light'
 
     if (theme === 'system') {

@@ -2,29 +2,35 @@
 import '@/styles/globals.css'
 import Layout from '../layouts/Layout.astro';
 import { Button } from '@/components/ui/button';
-import { CodeIcon } from '@radix-ui/react-icons'
-import Skills from '../components/Skills';
+import Skills from '../components/Skills'
+import { Image } from 'astro:assets';
+import myImage from '../../public/diego_.png'
+import Message from '../components/Message.astro'
 ---
 
 <Layout>
-  <div class="hero py-20 px-20 w-100 flex justify-center">
-    <div class="land-intro lg:w-1/2 sm:w-100">
-      <h1 class="py-5 text-6xl">Full Stack Developer</h1>
-      <div>
-        <p>I'm a Full Stack Engineer with a proficiency in Python and in the MERN stack</p>
-        <p></p>
+  <div class="container stack gap-4">
+    <div class="hero py-20 px-20 w-100 flex justify-center bg-card rounded-xl border text-card-foreground shadow box-border">
+      <div class="land-intro lg:w-1/2 sm:w-100">
+        <h1 class="py-5 text-6xl">Hi, my name is Diego</h1>
+        <div>
+          <p class="text-3xl">I'm a problem solver that loves to learn new things</p>
+        </div>
+        <div class="my-8">
+          <Button className="lg:text-2xl font-bold lg:py-7">
+            See my work
+          </Button>
+        </div>
       </div>
-      <div class="my-8">
-        <Button className="lg:text-2xl font-bold lg:py-7">
-          See my work
-        </Button>
-      </div>
-      <div class="flex justify-center lg:justify-start mt-10">
-        <Skills client:only="react"/>
+      <div class="land-image lg:w-1/2 lg:flex hidden items-center justify-end">
+        <Image src={myImage} alt="diego_profile_img" class="w-100 h-auto rounded-lg hover:scale-105 shadow"/>
       </div>
     </div>
-    <div class="land-image lg:block hidden m-1">
-      <img class="w-100 h-auto rounded-full hover:scale-105" src="/diego_.png" alt="diego_profile_img">
+    <div class="py-20 px-20 w-100 flex justify-center bg-card rounded-xl border text-card-foreground shadow box-border mt-10">
+      <Skills client:only="react" />
+    </div>
+    <div class="py-20 px-20 w-100 bg-card rounded-xl border text-card-foreground shadow box-border mt-10">
+      <Message />
     </div>
   </div>
 </Layout>
