@@ -5,7 +5,6 @@ import { Button } from '@/components/ui/button';
 import { Image } from 'astro:assets';
 import myImage from '../../public/diego_.png'
 import Message from '../components/Message.astro'
-import { Icon } from 'astro-icon'
 import IconList  from '../components/IconList.jsx'
 ---
 
@@ -14,15 +13,7 @@ import IconList  from '../components/IconList.jsx'
     <div class="hero py-20 px-20 w-100 flex justify-center bg-card rounded-xl border text-card-foreground shadow box-border">
       <div class="land-intro lg:w-2/3 sm:w-100">
         <h1 class=" text-7xl">Full Stack Developer</h1>
-        <div class="icons flex justify-center">
-          <Icon class="h-8 mr-3" name="radix-icons:caret-left"/>
-          <Icon class="h-8  mr-3" name="vscode-icons:file-type-python"/>
-          <Icon class="h-8 mr-3" name="vscode-icons:file-type-django"/>
-          <Icon class="h-8 mr-3" name="vscode-icons:file-type-js-official"/>
-          <Icon class="h-8 mr-3" name="vscode-icons:file-type-reactjs"/>
-          <Icon class="h-8 mr-3" name="vscode-icons:file-type-node"/>
-          <Icon class="h-8 mr-3" name="radix-icons:caret-right"/>
-        </div>
+        <IconList client:only />
         <div class="pt-3">
           <p class="text-3xl">I'm a problem solver that loves to learn new things</p>
         </div>
@@ -42,6 +33,5 @@ import IconList  from '../components/IconList.jsx'
     <div class="py-20 px-20 w-100 bg-card rounded-xl border text-card-foreground shadow box-border mt-10">
       <Message />
     </div>
-    <IconList client:only />
   </div>
 </Layout>

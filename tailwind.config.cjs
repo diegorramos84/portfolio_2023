@@ -35,6 +35,9 @@ module.exports = {
       '9xl': '7rem',
       '10xl': '10rem'
     },
+    colors: {
+      'greenish': '#21B356',
+    },
     extend: {
       colors: {
         border: "hsl(var(--border))",
@@ -92,5 +95,8 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+  ],
+
 }
