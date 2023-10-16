@@ -1,0 +1,38 @@
+---
+import { Link } from 'astro-link'
+---
+
+<div class="flex flex-col lg:flex-row lg:justify-around items-center justify-center text-center pt-5">
+  <div class="flex w-full lg:w-1/2 lg:justify-around justify-center">
+    <h1 class="text-2xl lg:text-4xl w-full font-extrabold">My Socials: </h1>
+  </div>
+  <div class="social-icons flex w-full lg:w-1/2 lg:justify-around justify-center mt-2">
+    <Link
+      href="https://github.com/diegorramos84"
+      title="Github"
+      externalInNewTab={true}
+      class="social-icon"
+    >
+      <i class="devicon-github-original text-2xl lg:text-5xl hover:text-greenish mr-5"></i>
+    </Link>
+
+    <Link
+      href="www.linkedin.com/in/diegorramos84"
+      title="Linkedin"
+      externalInNewTab={true}
+      class="social-icon"
+    >
+      <i class="devicon-linkedin-plain text-2xl lg:text-5xl hover:text-greenish mr-5"></i>
+    </Link>
+
+    <Link
+      href="https://twitter.com/DIERRamos84"
+      title="Twitter"
+      externalInNewTab={true}
+      class="social-icon"
+    >
+      <i class="devicon-twitter-original text-2xl lg:text-5xl hover:text-greenish mr-5"></i>
+    </Link>
+  </div>
+
+</div>

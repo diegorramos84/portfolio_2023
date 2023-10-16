@@ -1,6 +1,7 @@
 ---
 import Header from "../components/Header.astro";
 import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro"
 import '@fontsource/ibm-plex-sans';
 import '@fontsource/shadows-into-light';
 import ThemeProvider from '@/components/theme/ThemeProvider.astro'
@@ -15,6 +16,7 @@ const { title, seoDesc } = Astro.props
     </head>
     <Navbar class="lg:flex"/>
     <slot />
+    <Footer />
     <style>
       body {
         font-family: 'IBM Plex Sans', sans-serif;

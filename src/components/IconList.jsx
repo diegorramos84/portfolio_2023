@@ -14,7 +14,7 @@ const Icon = ({ src, alt, text}) => (
   <TooltipProvider>
     <Tooltip>
       <TooltipTrigger>
-        <img className="h-12 p-2 hover:filter-grayscale" src={src} alt={alt} />
+        <img className="h-12 p-2 hover:bg-accent hover:text-accent-foreground cursor-default" src={src} alt={alt} />
       </TooltipTrigger>
       <TooltipContent>
         <p>{text}</p>
@@ -36,7 +36,7 @@ const IconList = () => {
   }
 
   return (
-    <div className="icons-container flex items-center justify-center">
+    <div className="icons-container flex items-center justify-center px-2">
       <Button variant="outline" size="icon" className="prev-btn" onClick={scrollLeft} disabled={startIndex === 0}>
         <TooltipProvider>
             <Tooltip>
@@ -50,7 +50,7 @@ const IconList = () => {
           </TooltipProvider>
       </Button>
 
-      <div className="icons flex justify-center p-4">
+      <div className="icons flex justify-center p-4 scroll-smooth">
         {icons.slice(startIndex, startIndex + 5).map((icon, idex) => (
           <Icon key={idex} src={icon.src} alt={icon.alt} text={icon.text} />
         ))}
