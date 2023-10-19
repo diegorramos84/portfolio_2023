@@ -4,25 +4,26 @@ import ModeToggle from '@/components/theme/theme-toggle';
 ---
 
 <header>
-  <div class="lg:flex py-5 px-8 lg:px-60 gap-5">
+  <div class="py-5 px-8 lg:px-60 gap-5">
     <Astronav>
-      <div class="flex w-full justify-between">
-        <h1 class="text-4xl font-custom">Diego Ramos</h1>
-        <ModeToggle client:only/>
-        <div class=" lg:hidden flex items-center">
-          <MenuIcon class="w-7 h-full text-gray-800" />
+      <div class="lg:flex p-5 bg-card rounded-xl text-card-foreground shadow-lg box-border">
+        <div class="flex w-full justify-between">
+          <h1 class="text-4xl font-custom">Diego Ramos</h1>
+          <ModeToggle client:only/>
+          <div class=" lg:hidden flex items-center">
+            <MenuIcon class="w-7 h-full text-gray-800" />
+          </div>
         </div>
+          <MenuItems class="hidden lg:flex items-center">
+            <ul class="flex flex-col lg:flex-row lg:gap-5">
+              <li><a href="/">[home]</a></li>
+              <li><a href="/projects">[projects]</a></li>
+              <li><a href="/about">[about]</a></li>
+              <li><a href="/contact">[contact]</a></li>
+              <li><a href="/resume">[resume]</a></li>
+            </ul>
+          </MenuItems>
       </div>
-        <MenuItems class="hidden lg:flex ">
-          <ul class="flex flex-col lg:flex-row lg:gap-5">
-            <li><a href="/">[home]</a></li>
-            <li><a href="/projects">[projects]</a></li>
-            <li><a href="/about">[about]</a></li>
-            <li><a href="/contact">[contact]</a></li>
-            <li><a href="/resume">[resume]</a></li>
-          </ul>
-        </MenuItems>
-
     </Astronav>
   </div>
 </header>
