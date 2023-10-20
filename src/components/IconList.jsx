@@ -14,7 +14,7 @@ const Icon = ({ src, alt, text}) => (
   <TooltipProvider>
     <Tooltip>
       <TooltipTrigger>
-        <img className="h-12 p-2 hover:bg-accent hover:text-accent-foreground cursor-default" src={src} alt={alt} />
+        <img className="h-20 w-20 p-2 hover:bg-accent hover:text-accent-foreground cursor-default" src={src} alt={alt} />
       </TooltipTrigger>
       <TooltipContent>
         <p>{text}</p>
@@ -41,7 +41,7 @@ const IconList = () => {
         <TooltipProvider>
             <Tooltip>
               <TooltipTrigger>
-                <ChevronLeftIcon className='h-4 w-4'/>
+                <ChevronLeftIcon className='h-10 w-10'/>
               </TooltipTrigger>
               <TooltipContent>
                 <p>Previous</p>
@@ -60,7 +60,7 @@ const IconList = () => {
         <TooltipProvider>
           <Tooltip>
             <TooltipTrigger>
-              <ChevronRightIcon className='h-4 w-4'/>
+              <ChevronRightIcon className='h-10 w-10'/>
             </TooltipTrigger>
             <TooltipContent>
               <p>Next</p>

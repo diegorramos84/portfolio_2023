@@ -5,26 +5,39 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-  DropdownMenuLabel
 } from '@/components/ui/dropdown-menu'
+import { useState, useEffect } from "react";
 
 const ModeToggle = () => {
+  const [theme, setTheme] = useState('dark')
 
-  const setTheme = (theme) => {
-    const currentTheme = localStorage.getItem('theme') || 'dark'
+  useEffect(() => {
+    const isDarkMode = document.documentElement.classList.contains("dark")
+    setTheme(isDarkMode ? "dark" : "theme-light")
+  }, [])
 
-    document.documentElement.classList.remove(currentTheme)
+  useEffect(() => {
+    const isDark = theme === 'dark' || (theme === 'system' && window.matchMedia("prefer-color-scheme: dark").matches)
+    document.documentElement.classList[isDark ? "add" : "remove"]('dark')
+  }, [theme])
 
-    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches? 'dark' : 'light'
 
-    if (theme === 'system') {
-      document.documentElement.classList.add(systemTheme)
-      localStorage.setItem("theme", systemTheme)
-    } else {
-      document.documentElement.classList.add(theme)
-      localStorage.setItem("theme", theme)
-    }
-  }
+
+  // const setTheme = (theme) => {
+  //   const currentTheme = localStorage.getItem('theme') || 'dark'
+
+  //   document.documentElement.classList.remove(currentTheme)
+
+  //   const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches? 'dark' : 'light'
+
+  //   if (theme === 'system') {
+  //     document.documentElement.classList.add(systemTheme)
+  //     localStorage.setItem("theme", systemTheme)
+  //   } else {
+  //     document.documentElement.classList.add(theme)
+  //     localStorage.setItem("theme", theme)
+  //   }
+  // }
 
 
   return (
@@ -37,7 +50,7 @@ const ModeToggle = () => {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => setTheme("light")}>
+        <DropdownMenuItem onClick={() => setTheme("theme-light")}>
           Light
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setTheme("dark")}>

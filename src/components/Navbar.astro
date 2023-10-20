@@ -1,6 +1,6 @@
 ---
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
-import ModeToggle from '@/components/theme/theme-toggle';
+import ModeToggle from '@/components/theme/ModeToggle';
 ---
 
 <header>
@@ -9,7 +9,7 @@ import ModeToggle from '@/components/theme/theme-toggle';
       <div class="lg:flex p-5 bg-card rounded-xl text-card-foreground shadow-lg box-border">
         <div class="flex w-full justify-between">
           <h1 class="text-4xl font-custom">Diego Ramos</h1>
-          <ModeToggle client:only/>
+          <ModeToggle client:load/>
           <div class=" lg:hidden flex items-center">
             <MenuIcon class="w-7 h-full text-gray-800" />
           </div>

@@ -37,6 +37,14 @@ module.exports = {
     },
     colors: {
       'greenish': '#21B356',
+      'pythonTextColor': '#FFD43B',
+      'pythonBGColor': '#306998',
+      'djangoBGColor': '#31BE72',
+      'jsTextColor':'#323330',
+      'jsBGColor': '#F0DB4F',
+      'reactBGColor': '#00bcd4',
+      'reactTextColor': '#222222',
+
     },
     extend: {
       colors: {
