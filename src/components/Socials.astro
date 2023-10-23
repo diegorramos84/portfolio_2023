@@ -2,37 +2,45 @@
 import { Link } from 'astro-link'
 ---
 
-<div class="flex flex-col w-full lg:justify-around items-center justify-center text-center gap-4">
-  <div class="flex w-1/2 lg:justify-around justify-center">
-    <h1 class="text-2xl lg:text-2xl w-full font-extrabold">My Socials</h1>
-  </div>
-  <div class="social-icons flex  w-1/2 justify-around">
-    <Link
-      href="https://github.com/diegorramos84"
-      title="Github"
-      externalInNewTab={true}
-      class="social-icon"
-    >
-      <i class="devicon-github-original text-2xl lg:text-3xl hover:text-greenish"></i>
-    </Link>
+<div class="flex flex-col w-full lg:justify-around items-center justify-center text-center gap-2 ">
+    <div class="github-icon transform hover:scale-110 transition-transform hover:text-greenish bg-card rounded-xl text-card-foreground w-full shadow-lg border border-gray-800  hover:border-greenish">
+      <Link
+        href="https://github.com/diegorramos84"
+        title="Github"
+        externalInNewTab={true}
+        class="social-icon"
+      >
+        <div class="flex items-center justify-center gap-2">
+          <i class="devicon-github-original text-2xl lg:text-3xl"></i>
+          <span class="lg:text-3xl">GitHub</span>
+        </div>
+      </Link>
+    </div>
+    <div class="linkedin-icon transform hover:scale-110 transition-transform hover:text-greenish bg-card rounded-xl text-card-foreground w-full shadow-lg border border-gray-800  hover:border-greenish">
+      <Link
+        href="www.linkedin.com/in/diegorramos84"
+        title="Linkedin"
+        externalInNewTab={true}
+        class="social-icon"
+      >
+      <div class="flex items-center justify-center gap-2">
+        <i class="devicon-linkedin-plain text-2xl lg:text-3xl"></i>
+        <span class="lg:text-3xl">LinkedIn</span>
+      </div>
+      </Link>
 
-    <Link
-      href="www.linkedin.com/in/diegorramos84"
-      title="Linkedin"
-      externalInNewTab={true}
-      class="social-icon"
-    >
-      <i class="devicon-linkedin-plain text-2xl lg:text-3xl hover:text-greenish"></i>
-    </Link>
-
-    <Link
-      href="https://twitter.com/DIERRamos84"
-      title="Twitter"
-      externalInNewTab={true}
-      class="social-icon"
-    >
-      <i class="devicon-twitter-original text-2xl lg:text-3xl hover:text-greenish"></i>
-    </Link>
-  </div>
-
+    </div>
+    <div class="twitter-icon transform hover:scale-110 transition-transform hover:text-greenish bg-card rounded-xl text-card-foreground w-full shadow-lg border border-gray-800  hover:border-greenish">
+      <Link
+        href="https://twitter.com/DIERRamos84"
+        title="Twitter"
+        externalInNewTab={true}
+        class="social-icon"
+      >
+      <div class="flex items-center justify-center gap-2">
+        <i class="devicon-twitter-original text-2xl lg:text-3xl"></i>
+        <span class="lg:text-3xl">Twitter</span>
+      </div>
+      </Link>
+    </div>
 </div>

@@ -1,30 +1,18 @@
-import React from 'react';
+import React from "react"
 import { Badge } from "@/components/ui/badge"
 
+const badgeClassNames = {
+  python: "bg-pythonBGColor text-pythonTextColor",
+  django: "bg-djangoBGColor text-djangoTextColor",
+  flask: "bg-black text-white",
+  js: "bg-jsBGColor text-jsTextColor",
+  react: "bg-reactBGColor text-reactTextColor",
+}
+
 const Badges = ({ type, text }) => {
-  let badgeClassName
+  const badgeClassName = badgeClassNames[type] || ""
 
-  switch (type) {
-    case 'python':
-      badgeClassName = 'bg-pythonBGColor text-pythonTextColor'
-      break
-    case 'django':
-      badgeClassName = 'bg-djangoBGColor text-djangoTextColor'
-      break
-    case 'js':
-      badgeClassName = 'bg-jsBGColor text-jsTextColor'
-      break
-    case 'react':
-      badgeClassName = 'bg-reactBGColor text-reactTextColor'
-      break
-  }
-
-  return (
-    <Badge
-      className={`${badgeClassName} cursor-default`}
-      >{text}
-    </Badge>
-  )
+  return <Badge className={`${badgeClassName} cursor-default`}>{text}</Badge>
 }
 
 export default Badges
