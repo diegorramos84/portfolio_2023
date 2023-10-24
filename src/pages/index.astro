@@ -4,12 +4,12 @@ import Layout from '../layouts/Layout.astro';
 import { Button } from '@/components/ui/button';
 import { Image } from 'astro:assets';
 import myImage from '../../public/diego_.png'
-import Message from '../components/Message.astro'
 import IconList  from '../components/IconList.jsx'
 import Socials from '../components/Socials.astro'
-import Now from '@/components/Now.astro';
+import Now from '@/components/Now.jsx';
 import RecentProjects from '@/components/RecentProjects.jsx'
 import MouseAnimation from '@/components/MouseAnimation.astro'
+import { PaperPlaneIcon } from '@radix-ui/react-icons';
 
 ---
 <script>
@@ -36,17 +36,31 @@ import MouseAnimation from '@/components/MouseAnimation.astro'
 
 
   const sequence = [
-    [".hero", { x: ["-200%", "0%"] }, { duration: 0.5 }],
-    [".utils .tech", { x: ["200%", "0%"] }, { at: "+0.1" }],
-    [".utils .socials .github-icon", { x: ["200%", "0%"] }, { at: "+0.1"}],
-    [".utils .socials .linkedin-icon", { x: ["200%", "0%"] }, { at: "+0.1"}],
-    [".utils .socials .twitter-icon", { x: ["200%", "0%"] }, { at: "+0.1"}],
-    [".utils .message", { x: ["200%", "0%"] }, { at: "+0.5"}],
-    [".recent-projects", { y: ["1000%", "0%"] }, { at: "+0.1"}],
-    [".mouse_scroll", { y: ["-1000%", "0%"] }, { at: "+0.1"}],
+    [".hero", { opacity: [0, 1]  }, { duration: 0.5, opacity: {duration: 0.1}, easing: ["ease-in"] }],
+    [".hero", { y: ["20%", "0%"] }, { duration: 0.5 }],
+
+    [".utils .tech", { opacity: [0, 1]  }, { duration: 0.5, opacity: {duration: 0.1}, easing: ["ease-in"] }],
+    [".utils .tech", { x: ["20%", "0%"] }, { at: "+0.3" }],
+
+    [".utils .socials .github-icon", { opacity: [0, 1]  }, { duration: 0.5, opacity: {duration: 0.1}, easing: ["ease-in"] }],
+    [".utils .socials .github-icon", { x: ["20%", "0%"] },  { at: "+0.1"}],
+
+    [".utils .socials .linkedin-icon", { opacity: [0, 1]  }, { duration: 0.5, opacity: {duration: 0.1}, easing: ["ease-in"] }],
+    [".utils .socials .linkedin-icon", { x: ["20%", "0%"] }, { at: "+0.1"}],
+
+    [".utils .socials .twitter-icon", { opacity: [0, 1]  }, { duration: 0.5, opacity: {duration: 0.1}, easing: ["ease-in"] }],
+    [".utils .socials .twitter-icon", { x: ["20%", "0%"] },  { at: "+0.1"}],
+
+    [".utils .now", { opacity: [0, 1]  }, { duration: 0.5, opacity: {duration: 0.1}, easing: ["ease-in"] }],
+    [".utils .now", { x: ["20%", "0%"] }, { at: "+0.3"}],
+
+    [".recent-projects", { opacity: [0, 0.1]  }, { duration: 1, opacity: {duration: 0.5}, easing: ["ease-in"] }],
+    [".mouse_scroll", { opacity: [0, 1]  }, { duration: 1, opacity: {duration: 0.05}, easing: ["ease-in"] }],
   ]
 
-  timeline(sequence)
+  timeline(sequence, {
+  defaultOptions: { ease: "ease-in-out" },
+})
 
 </script>
 
@@ -74,33 +88,41 @@ import MouseAnimation from '@/components/MouseAnimation.astro'
 <Layout>
   <div class="main flex flex-col gap-4 mb-20">
     <div class="container flex flex-col lg:flex-row lg:justify-around gap-4">
-      <div class="hero lg:w-2/3 lg:py-20 lg:px-20 w-100 flex justify-center bg-card rounded-xl text-card-foreground shadow-lg border border-gray-800 hover:border-greenish">
-        <div class="land-intro lg:w-2/3 text-center lg:text-left">
-          <h1 class="text-3xl lg:text-7xl font-extrabold">Full Stack Developer</h1>
-          <div class="pt-3">
-            <p class="text-xl lg:text-3xl">I'm a problem solver that loves to learn new things</p>
+      <div class="hero w-full lg:py-20 lg:pt-10 lg:px-20 flex bg-card rounded-xl text-card-foreground shadow-lg border border-gray-800 hover:border-greenish">
+        <div class="land-intro flex flex-col text-center lg:text-left">
+          <div class="fullstack-header mb-5">
+            <h1 class="text-3xl lg:text-7xl font-extrabold">Full Stack Developer</h1>
           </div>
-          <div class="my-8">
-            <Button className="lg:text-2xl font-bold lg:py-7">
-              See my work
-            </Button>
+          <div class="fullstack-content flex flex-row justify-between gap-8">
+            <div class="fullstack-content-image">
+              <div class="land-image lg:flex hidden">
+                <Image src={myImage} alt="diego_profile_img" width="1000" class="rounded-lg shadow"/>
+              </div>
+            </div>
+            <div class="fullstack-content-text flex flex-col justify-between items-center">
+              <div class="fullstack-content-description">
+                <p class="text-xl lg:text-3xl">I'm a full-stack developer based in London who is addicted to solving problems and learning new things</p>
+              </div>
+              <div class="fullstack-content-button">
+                <Button className="lg:text-xl font-bold lg:py-7 lg flex justify-around gap-2">
+                  <span>Send my a message</span>
+                  <PaperPlaneIcon  />
+                </Button>
+            </div>
           </div>
-        </div>
-        <div class="land-image lg:w-1/3 lg:flex hidden items-center justify-end content-center">
-          <Image src={myImage} alt="diego_profile_img" class="w-80 h-auto rounded-lg shadow"/>
+          </div>
         </div>
       </div>
-      <div class="utils lg:w-1/3 flex flex-col gap-4 lg:justify-between ">
-        <div class="tech lg:h-1/3 bg-card rounded-xl text-card-foreground box-border flex flex-col justify-center items-center text-2xl lg:text-3xl w-full font-extrabold shadow-lg border border-gray-800 hover:border-greenish">
+      <div class="utils flex flex-col gap-4 lg:justify-between ">
+        <div class="tech lg:h-1/3 bg-card rounded-xl text-card-foreground box-border flex flex-col justify-center items-center text-2xl lg:text-2xl w-full font-extrabold shadow-lg border border-gray-800 hover:border-greenish">
           Tech Stack
           <IconList client:only/>
         </div>
         <div class="socials lg:h-1/3 flex flex-col justify-center items-center">
           <Socials/>
         </div>
-        <div class="message lg:h-1/3 bg-card rounded-xl text-card-foreground box-border flex justify-between shadow-lg border border-gray-800  hover:border-greenish">
-        <Now />
-          <!-- <Message /> -->
+        <div class="now lg:h-1/3 bg-card rounded-xl text-card-foreground box-border flex justify-between shadow-lg border border-gray-800  hover:border-greenish">
+          <Now client:load/>
         </div>
       </div>
     </div>

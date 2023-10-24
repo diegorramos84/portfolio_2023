@@ -3,27 +3,25 @@ import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
 import ModeToggle from '@/components/theme/ModeToggle';
 ---
 
-<header>
-  <div class="py-5 px-8 lg:px-60 gap-5">
-    <Astronav>
-      <div class="lg:flex p-5 bg-card rounded-xl text-card-foreground shadow-lg box-border">
-        <div class="flex w-full justify-between">
-          <h1 class="text-4xl font-custom">Diego Ramos</h1>
-          <ModeToggle client:load/>
-          <div class=" lg:hidden flex items-center">
-            <MenuIcon class="w-7 h-full text-gray-800" />
-          </div>
+<div class="container py-4">
+  <Astronav>
+    <div class="lg:flex p-5 bg-card rounded-xl text-card-foreground shadow-lg box-border gap-4 ">
+      <div class="flex w-full justify-between">
+        <h1 class="text-4xl font-custom">Diego <span class="text-greenish">Ramos</span></h1>
+        <ModeToggle client:load/>
+        <div class=" lg:hidden flex items-center">
+          <MenuIcon class="w-7 h-full text-gray-800" />
         </div>
-          <MenuItems class="hidden lg:flex items-center">
-            <ul class="flex flex-col lg:flex-row lg:gap-5">
-              <li><a href="/">[home]</a></li>
-              <li><a href="/projects">[projects]</a></li>
-              <li><a href="/about">[about]</a></li>
-              <li><a href="/contact">[contact]</a></li>
-              <li><a href="/resume">[resume]</a></li>
-            </ul>
-          </MenuItems>
       </div>
-    </Astronav>
-  </div>
-</header>
+        <MenuItems class="hidden lg:flex items-center">
+          <ul class="flex flex-col lg:flex-row lg:gap-5">
+            <li><a href="/">[home]</a></li>
+            <li><a href="/projects">[archive]</a></li>
+            <li><a href="/about">[about]</a></li>
+            <li><a href="/resume">[resume]</a></li>
+          </ul>
+        </MenuItems>
+    </div>
+  </Astronav>
+
+</div>

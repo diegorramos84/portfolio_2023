@@ -9,6 +9,7 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import Badges from "./Badges"
+import { Button } from "@/components/ui/button"
 
 const RecentProjects = () => {
   return (
@@ -19,7 +20,9 @@ const RecentProjects = () => {
       <div class="recent-cards flex flex-col lg:flex-row gap-4">
         <Card className="bg-card rounded-xl text-card-foreground shadow-lg border border-gray-800  hover:border-greenish lg:w-1/3 flex flex-col justify-between">
           <CardHeader>
-            <CardTitle>Symphona</CardTitle>
+            <CardTitle className="text-2xl flex justify-center">
+              Symphona
+            </CardTitle>
             <img
               src="/projects/room-music.jpeg"
               alt="symphona page pic"
@@ -45,7 +48,9 @@ const RecentProjects = () => {
         </Card>
         <Card className="bg-card rounded-xl text-card-foreground shadow-lg border border-gray-800  hover:border-greenish lg:w-1/3  flex flex-col justify-between">
           <CardHeader>
-            <CardTitle>Homework Heroes</CardTitle>
+            <CardTitle className="text-2xl flex justify-center">
+              Homework Heroes
+            </CardTitle>
             <img
               style={{ width: "100%", height: "200px" }}
               src="/projects/homework-resized.png"
@@ -73,7 +78,9 @@ const RecentProjects = () => {
         </Card>
         <Card className="bg-card rounded-xl text-card-foreground shadow-lg border border-gray-800  hover:border-greenish lg:w-1/3 flex flex-col justify-between">
           <CardHeader>
-            <CardTitle>Braincrastination</CardTitle>
+            <CardTitle className="text-2xl flex justify-center">
+              Braincrastination
+            </CardTitle>
             <img
               style={{ width: "100%", height: "200px" }}
               src="/projects/calendar.png"
@@ -98,6 +105,9 @@ const RecentProjects = () => {
             </div>
           </CardFooter>
         </Card>
+      </div>
+      <div className="flex self-end">
+        <Button variant="outline">archive</Button>
       </div>
     </div>
   )
