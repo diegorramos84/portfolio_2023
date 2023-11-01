@@ -7,6 +7,7 @@ const badgeClassNames = {
   flask: "bg-black text-white",
   js: "bg-jsBGColor text-jsTextColor",
   react: "bg-reactBGColor text-reactTextColor",
+  node: "bg-nodeBGColor text-white",
 }
 
 const Badges = ({ type, text }) => {

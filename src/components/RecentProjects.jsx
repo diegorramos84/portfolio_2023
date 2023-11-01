@@ -1,4 +1,7 @@
-import React from "react"
+import React, { useState, useRef } from "react"
+
+import ReactPlayer from "react-player"
+import Modal from "react-modal"
 
 import {
   Card,
@@ -11,23 +14,80 @@ import {
 import Badges from "./Badges"
 import { Button } from "@/components/ui/button"
 
+import { animate } from "motion"
+
 const RecentProjects = () => {
+  const videoRef = useRef()
+  const [modalIsOpen, setModalIsOpen] = useState(false)
+  const [selectedDemo, setSelectedDemo] = useState(null)
+
+  // const playPreview = animate(video)
+
+  // const onHover = () => {
+  //   animation.play
+  // }
+
+  // const handleMouseEnter = () => {
+  //   // videoRef.current.style.display = "block"
+  //   // videoRef.current.play()
+  //   setShowModal(true)
+  // }
+
+  // const handleMouseLeave = () => {
+  //   setShowModal(false)
+  //   // videoRef.current.style.display = "none"
+  //   videoRef.current.pause()
+  //   videoRef.current.currenTime = 0
+  // }
+
+  const handleDemo = (url) => {
+    const demo = url
+    setModalIsOpen(true)
+    setSelectedDemo(demo)
+  }
+
+  const closeModal = () => {
+    setModalIsOpen(false)
+    setSelectedDemo(null)
+  }
+
   return (
-    <div class="opacity-10 container recent-projects ext-card-foreground items-center flex flex-col gap-4">
-      <div class="recent-title py-4">
-        <h1 class="text-xl lg:text-5xl">Featured Projects</h1>
+    // TODO: add back opacity-10 here
+    <div className="opacity-10 container recent-projects ext-card-foreground items-center flex flex-col gap-4">
+      <div className="recent-title py-4">
+        <h1 className="text-xl lg:text-5xl">Featured Projects</h1>
       </div>
-      <div class="recent-cards flex flex-col lg:flex-row gap-4">
-        <Card className="bg-card rounded-xl text-card-foreground shadow-lg border border-gray-800  hover:border-greenish lg:w-1/3 flex flex-col justify-between">
+      <div className="recent-cards flex flex-col lg:flex-row gap-4">
+        <Card className="relative bg-card rounded-xl text-card-foreground shadow-lg border border-gray-800 lg:w-1/3 flex flex-col justify-between hover:border-greenish">
           <CardHeader>
-            <CardTitle className="text-2xl flex justify-center">
-              Symphona
+            <CardTitle className="flex justify-between items-center mb-1">
+              <span className="flex-1">
+                <h2 className="text-2xl text-center ">Symphona</h2>
+              </span>
+              <span className="absolute top-0 right-0 mt-2 mr-2 hover:text-greenish hover:scale-110">
+                <a href="">
+                  <i class="devicon-github-original text-2xl lg:text-2xl "></i>
+                </a>
+              </span>
             </CardTitle>
-            <img
-              src="/projects/room-music.jpeg"
-              alt="symphona page pic"
-              style={{ width: "100%", height: "200px" }}
-            />
+            <div>
+              <div>
+                <img
+                  src="/projects/room-music.jpeg"
+                  alt="symphona page pic"
+                  style={{ width: "100%", height: "200px", objectFit: "cover" }}
+                  className="card-image"
+                />
+                <button
+                  className="bg-warning"
+                  onClick={() => {
+                    handleDemo("/projects/musicapp.webm")
+                  }}
+                >
+                  Demo
+                </button>
+              </div>
+            </div>
             <CardDescription></CardDescription>
           </CardHeader>
           <CardContent>
@@ -98,10 +158,9 @@ const RecentProjects = () => {
           </CardContent>
           <CardFooter className="mt-auto">
             <div className="badges flex gap-2">
-              <Badges type="python" text="python" />
-              <Badges type="django" text="django" />
               <Badges type="js" text="javascript" />
               <Badges type="react" text="react" />
+              <Badges type="node" text="node" />
             </div>
           </CardFooter>
         </Card>
@@ -109,6 +168,35 @@ const RecentProjects = () => {
       <div className="flex self-end">
         <Button variant="outline">archive</Button>
       </div>
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        contentLabel="Video Modal"
+        style={{
+          overlay: {
+            backgroundColor: "rgba(0,0,0,0.6)",
+          },
+          content: {
+            width: "850px",
+            height: "600px",
+            margin: "auto", // Center the modal horizontally
+            padding: "0px",
+            border: "none",
+            overflow: "hidden",
+            backgroundColor: "rgba(0,0,0,0)",
+          },
+        }}
+      >
+        <ReactPlayer
+          url={selectedDemo}
+          controls={true}
+          muted={true}
+          className="bg-dark overflow-hidden"
+          playing={true}
+          width="100%"
+          height="100%"
+        />
+      </Modal>
     </div>
   )
 }

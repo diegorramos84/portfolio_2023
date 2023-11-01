@@ -11,6 +11,7 @@ import RecentProjects from '@/components/RecentProjects.jsx'
 import MouseAnimation from '@/components/MouseAnimation.astro'
 import { PaperPlaneIcon } from '@radix-ui/react-icons';
 
+
 ---
 <script>
   import { animate, stagger, scroll, timeline } from "motion"
@@ -33,6 +34,7 @@ import { PaperPlaneIcon } from '@radix-ui/react-icons';
       easing: ["ease-in", "ease-out"]
     }
   ))
+
 
 
   const sequence = [
@@ -127,6 +129,6 @@ import { PaperPlaneIcon } from '@radix-ui/react-icons';
       </div>
     </div>
     <MouseAnimation />
-    <RecentProjects/>
+    <RecentProjects client:load/>
   </div>
 </Layout>

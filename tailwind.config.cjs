@@ -44,6 +44,7 @@ module.exports = {
       jsBGColor: "#F0DB4F",
       reactBGColor: "#00bcd4",
       reactTextColor: "#222222",
+      nodeBGColor: "#8CC84B",
       flaskBGColor: "#333333",
       grayMuted: "#666666",
       progressBar: "rgba(33, 179, 86, 0.5)",
