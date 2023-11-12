@@ -14,31 +14,9 @@ import {
 import Badges from "./Badges"
 import { Button } from "@/components/ui/button"
 
-import { animate } from "motion"
-
 const RecentProjects = () => {
-  const videoRef = useRef()
   const [modalIsOpen, setModalIsOpen] = useState(false)
   const [selectedDemo, setSelectedDemo] = useState(null)
-
-  // const playPreview = animate(video)
-
-  // const onHover = () => {
-  //   animation.play
-  // }
-
-  // const handleMouseEnter = () => {
-  //   // videoRef.current.style.display = "block"
-  //   // videoRef.current.play()
-  //   setShowModal(true)
-  // }
-
-  // const handleMouseLeave = () => {
-  //   setShowModal(false)
-  //   // videoRef.current.style.display = "none"
-  //   videoRef.current.pause()
-  //   videoRef.current.currenTime = 0
-  // }
 
   const handleDemo = (url) => {
     const demo = url
@@ -52,40 +30,35 @@ const RecentProjects = () => {
   }
 
   return (
-    // TODO: add back opacity-10 here
-    <div className="opacity-10 container recent-projects ext-card-foreground items-center flex flex-col gap-4">
+    // opacity-10
+    <div className="container recent-projects ext-card-foreground items-center flex flex-col gap-4">
       <div className="recent-title py-4">
         <h1 className="text-xl lg:text-5xl">Featured Projects</h1>
       </div>
       <div className="recent-cards flex flex-col lg:flex-row gap-4">
-        <Card className="relative bg-card rounded-xl text-card-foreground shadow-lg border border-gray-800 lg:w-1/3 flex flex-col justify-between hover:border-greenish">
+        <Card className="relative bg-card rounded-xl text-card-foreground shadow-lg border  border-darkReaderBorder  lg:w-1/3 flex flex-col justify-between hover:border-greenish">
           <CardHeader>
             <CardTitle className="flex justify-between items-center mb-1">
               <span className="flex-1">
                 <h2 className="text-2xl text-center ">Symphona</h2>
               </span>
-              <span className="absolute top-0 right-0 mt-2 mr-2 hover:text-greenish hover:scale-110">
-                <a href="">
-                  <i class="devicon-github-original text-2xl lg:text-2xl "></i>
-                </a>
-              </span>
             </CardTitle>
-            <div>
-              <div>
+            <div className="bg-white">
+              <div className="relative group">
                 <img
                   src="/projects/room-music.jpeg"
                   alt="symphona page pic"
                   style={{ width: "100%", height: "200px", objectFit: "cover" }}
-                  className="card-image"
+                  className="card-image bg-orange transition-transform duration-300 transform scale-100 group-hover:scale-105"
                 />
-                <button
-                  className="bg-warning"
+                <Button
+                  className="absolute bottom-0 left-1/2 transform -translate-x-1/2 py-3 px-5 w-full rounded-md opacity-0 transition-opacity duration-300 group-hover:opacity-100 font-extrabold text-md"
                   onClick={() => {
                     handleDemo("/projects/musicapp.webm")
                   }}
                 >
-                  Demo
-                </button>
+                  Watch Demo
+                </Button>
               </div>
             </div>
             <CardDescription></CardDescription>
@@ -104,18 +77,38 @@ const RecentProjects = () => {
               <Badges type="js" text="javascript" />
               <Badges type="react" text="react" />
             </div>
+            <span className="absolute botton-0 right-0 mt-2 mr-2 hover:text-greenish hover:scale-110">
+              <a href="https://github.com/diegorramos84/room-music">
+                <i class="devicon-github-original text-2xl lg:text-2xl "></i>
+              </a>
+            </span>
           </CardFooter>
         </Card>
-        <Card className="bg-card rounded-xl text-card-foreground shadow-lg border border-gray-800  hover:border-greenish lg:w-1/3  flex flex-col justify-between">
+        <Card className="relative bg-card rounded-xl text-card-foreground shadow-lg border  border-darkReaderBorder  lg:w-1/3 flex flex-col justify-between hover:border-greenish">
           <CardHeader>
-            <CardTitle className="text-2xl flex justify-center">
-              Homework Heroes
+            <CardTitle className="flex justify-between items-center mb-1">
+              <span className="flex-1">
+                <h2 className="text-2xl text-center ">Homework Heroes</h2>
+              </span>
             </CardTitle>
-            <img
-              style={{ width: "100%", height: "200px" }}
-              src="/projects/homework-resized.png"
-              alt="homework heroes landing page pic"
-            />
+            <div className="bg-white">
+              <div className="relative group">
+                <img
+                  src="/projects/homework-resized.png"
+                  alt="homework heroes landing page pic"
+                  style={{ width: "100%", height: "200px", objectFit: "cover" }}
+                  className="card-image bg-orange transition-transform duration-300 transform scale-100 group-hover:scale-105"
+                />
+                <Button
+                  className="absolute bottom-0 left-1/2 transform -translate-x-1/2 py-3 px-5 w-full rounded-md opacity-0 transition-opacity duration-300 group-hover:opacity-100 font-extrabold text-md"
+                  onClick={() => {
+                    handleDemo("/projects/musicapp.webm")
+                  }}
+                >
+                  Watch Demo
+                </Button>
+              </div>
+            </div>
             <CardDescription></CardDescription>
           </CardHeader>
           <CardContent>
@@ -134,18 +127,38 @@ const RecentProjects = () => {
               <Badges type="js" text="javascript" />
               <Badges type="react" text="react" />
             </div>
+            <span className="absolute botton-0 right-0 mt-2 mr-2 hover:text-greenish hover:scale-110">
+              <a href="https://github.com/diegorramos84/Homework-Heroes">
+                <i class="devicon-github-original text-2xl lg:text-2xl "></i>
+              </a>
+            </span>
           </CardFooter>
         </Card>
-        <Card className="bg-card rounded-xl text-card-foreground shadow-lg border border-gray-800  hover:border-greenish lg:w-1/3 flex flex-col justify-between">
+        <Card className="relative bg-card rounded-xl text-card-foreground shadow-lg border  border-darkReaderBorder  lg:w-1/3 flex flex-col justify-between hover:border-greenish">
           <CardHeader>
-            <CardTitle className="text-2xl flex justify-center">
-              Braincrastination
+            <CardTitle className="flex justify-between items-center mb-1">
+              <span className="flex-1">
+                <h2 className="text-2xl text-center ">Braincrastination</h2>
+              </span>
             </CardTitle>
-            <img
-              style={{ width: "100%", height: "200px" }}
-              src="/projects/calendar.png"
-              alt="homework heroes landing page pic"
-            />
+            <div className="bg-white">
+              <div className="relative group">
+                <img
+                  src="/projects/calendar.png"
+                  alt="calendar landing page pic"
+                  style={{ width: "100%", height: "200px", objectFit: "cover" }}
+                  className="card-image bg-orange transition-transform duration-300 transform scale-100 group-hover:scale-105"
+                />
+                <Button
+                  className="absolute bottom-0 left-1/2 transform -translate-x-1/2 py-3 px-5 w-full rounded-md opacity-0 transition-opacity duration-300 group-hover:opacity-100 font-extrabold text-md"
+                  onClick={() => {
+                    handleDemo("/projects/musicapp.webm")
+                  }}
+                >
+                  Watch Demo
+                </Button>
+              </div>
+            </div>
             <CardDescription></CardDescription>
           </CardHeader>
           <CardContent>
@@ -162,6 +175,11 @@ const RecentProjects = () => {
               <Badges type="react" text="react" />
               <Badges type="node" text="node" />
             </div>
+            <span className="absolute botton-0 right-0 mt-2 mr-2 hover:text-greenish hover:scale-110">
+              <a href="https://github.com/JackDMoore/Brainiac-Brigade">
+                <i class="devicon-github-original text-2xl lg:text-2xl "></i>
+              </a>
+            </span>
           </CardFooter>
         </Card>
       </div>

@@ -38,11 +38,11 @@ const IconList = () => {
   }
 
   return (
-    <div className="icons-container flex items-center justify-center px-2 ">
+    <div className="icons-container flex items-center justify-center px-2">
       <Button
         variant="outline"
         size="icon"
-        className="prev-btn"
+        className="prev-btn border-darkReaderBorder  hover:border-greenish"
         onClick={scrollLeft}
         disabled={startIndex === 0}
       >
@@ -67,7 +67,7 @@ const IconList = () => {
       <Button
         variant="outline"
         size="icon"
-        className="next-btn"
+        className="next-btn border-darkReaderBorder  hover:border-greenish"
         onClick={scrollRight}
         disabled={startIndex >= Math.max(icons.length - 5, 0)}
       >

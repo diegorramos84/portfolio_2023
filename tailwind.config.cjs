@@ -47,6 +47,7 @@ module.exports = {
       nodeBGColor: "#8CC84B",
       flaskBGColor: "#333333",
       grayMuted: "#666666",
+      darkReaderBorder: "#7F7668",
       progressBar: "rgba(33, 179, 86, 0.5)",
     },
     extend: {
