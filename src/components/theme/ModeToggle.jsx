@@ -1,15 +1,15 @@
-import { Button } from "../ui/button";
+import { Button } from "../ui/button"
 import { MoonIcon, SunIcon } from "@radix-ui/react-icons"
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu'
-import { useState, useEffect } from "react";
+} from "@/components/ui/dropdown-menu"
+import { useState, useEffect } from "react"
 
 const ModeToggle = () => {
-  const [theme, setTheme] = useState('dark')
+  const [theme, setTheme] = useState("dark")
 
   useEffect(() => {
     const isDarkMode = document.documentElement.classList.contains("dark")
@@ -17,28 +17,12 @@ const ModeToggle = () => {
   }, [])
 
   useEffect(() => {
-    const isDark = theme === 'dark' || (theme === 'system' && window.matchMedia("prefer-color-scheme: dark").matches)
-    document.documentElement.classList[isDark ? "add" : "remove"]('dark')
+    const isDark =
+      theme === "dark" ||
+      (theme === "system" &&
+        window.matchMedia("prefer-color-scheme: dark").matches)
+    document.documentElement.classList[isDark ? "add" : "remove"]("dark")
   }, [theme])
-
-
-
-  // const setTheme = (theme) => {
-  //   const currentTheme = localStorage.getItem('theme') || 'dark'
-
-  //   document.documentElement.classList.remove(currentTheme)
-
-  //   const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches? 'dark' : 'light'
-
-  //   if (theme === 'system') {
-  //     document.documentElement.classList.add(systemTheme)
-  //     localStorage.setItem("theme", systemTheme)
-  //   } else {
-  //     document.documentElement.classList.add(theme)
-  //     localStorage.setItem("theme", theme)
-  //   }
-  // }
-
 
   return (
     <DropdownMenu>

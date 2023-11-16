@@ -1,4 +1,5 @@
-import React, { useState, useRef } from "react"
+import React, { useState } from "react"
+import { ArrowRightIcon } from "@radix-ui/react-icons"
 
 import ReactPlayer from "react-player"
 import Modal from "react-modal"
@@ -38,9 +39,17 @@ const RecentProjects = () => {
       <div className="recent-cards flex flex-col lg:flex-row gap-4">
         <Card className="relative bg-card rounded-xl text-card-foreground shadow-lg border  border-darkReaderBorder  lg:w-1/3 flex flex-col justify-between hover:border-greenish">
           <CardHeader>
-            <CardTitle className="flex justify-between items-center mb-1">
+            <CardTitle className="flex justify-between items-center mb-2">
               <span className="flex-1">
                 <h2 className="text-2xl text-center ">Symphona</h2>
+              </span>
+              <span className="hover:text-greenish hover:scale-110">
+                <a
+                  href="https://github.com/diegorramos84/room-music"
+                  target="a_blank"
+                >
+                  <i class="devicon-github-original text-2xl lg:text-2xl "></i>
+                </a>
               </span>
             </CardTitle>
             <div className="bg-white">
@@ -77,18 +86,21 @@ const RecentProjects = () => {
               <Badges type="js" text="javascript" />
               <Badges type="react" text="react" />
             </div>
-            <span className="absolute botton-0 right-0 mt-2 mr-2 hover:text-greenish hover:scale-110">
-              <a href="https://github.com/diegorramos84/room-music">
-                <i class="devicon-github-original text-2xl lg:text-2xl "></i>
-              </a>
-            </span>
           </CardFooter>
         </Card>
         <Card className="relative bg-card rounded-xl text-card-foreground shadow-lg border  border-darkReaderBorder  lg:w-1/3 flex flex-col justify-between hover:border-greenish">
           <CardHeader>
-            <CardTitle className="flex justify-between items-center mb-1">
+            <CardTitle className="flex justify-between items-center mb-2">
               <span className="flex-1">
                 <h2 className="text-2xl text-center ">Homework Heroes</h2>
+              </span>
+              <span className="hover:text-greenish hover:scale-110">
+                <a
+                  href="https://github.com/diegorramos84/Homework-Heroes"
+                  target="a_blank"
+                >
+                  <i class="devicon-github-original text-2xl lg:text-2xl "></i>
+                </a>
               </span>
             </CardTitle>
             <div className="bg-white">
@@ -102,7 +114,7 @@ const RecentProjects = () => {
                 <Button
                   className="absolute bottom-0 left-1/2 transform -translate-x-1/2 py-3 px-5 w-full rounded-md opacity-0 transition-opacity duration-300 group-hover:opacity-100 font-extrabold text-md"
                   onClick={() => {
-                    handleDemo("/projects/musicapp.webm")
+                    handleDemo("/projects/homework.webm")
                   }}
                 >
                   Watch Demo
@@ -127,18 +139,21 @@ const RecentProjects = () => {
               <Badges type="js" text="javascript" />
               <Badges type="react" text="react" />
             </div>
-            <span className="absolute botton-0 right-0 mt-2 mr-2 hover:text-greenish hover:scale-110">
-              <a href="https://github.com/diegorramos84/Homework-Heroes">
-                <i class="devicon-github-original text-2xl lg:text-2xl "></i>
-              </a>
-            </span>
           </CardFooter>
         </Card>
         <Card className="relative bg-card rounded-xl text-card-foreground shadow-lg border  border-darkReaderBorder  lg:w-1/3 flex flex-col justify-between hover:border-greenish">
           <CardHeader>
-            <CardTitle className="flex justify-between items-center mb-1">
+            <CardTitle className="flex justify-between items-center mb-2">
               <span className="flex-1">
                 <h2 className="text-2xl text-center ">Braincrastination</h2>
+              </span>
+              <span className=" hover:text-greenish hover:scale-110">
+                <a
+                  href="https://github.com/JackDMoore/Brainiac-Brigade"
+                  target="a_blank"
+                >
+                  <i class="devicon-github-original text-2xl lg:text-2xl "></i>
+                </a>
               </span>
             </CardTitle>
             <div className="bg-white">
@@ -152,7 +167,7 @@ const RecentProjects = () => {
                 <Button
                   className="absolute bottom-0 left-1/2 transform -translate-x-1/2 py-3 px-5 w-full rounded-md opacity-0 transition-opacity duration-300 group-hover:opacity-100 font-extrabold text-md"
                   onClick={() => {
-                    handleDemo("/projects/musicapp.webm")
+                    handleDemo("/projects/calendar.webm")
                   }}
                 >
                   Watch Demo
@@ -175,16 +190,21 @@ const RecentProjects = () => {
               <Badges type="react" text="react" />
               <Badges type="node" text="node" />
             </div>
-            <span className="absolute botton-0 right-0 mt-2 mr-2 hover:text-greenish hover:scale-110">
-              <a href="https://github.com/JackDMoore/Brainiac-Brigade">
-                <i class="devicon-github-original text-2xl lg:text-2xl "></i>
-              </a>
-            </span>
           </CardFooter>
         </Card>
       </div>
       <div className="flex self-end">
-        <Button variant="outline">archive</Button>
+        <a href="/projects_archive">
+          <Button
+            variant="outline"
+            className="g-card rounded-xl text-card-foreground shadow-lg border  border-darkReaderBorder"
+          >
+            View Full Project archive{" "}
+            <span className="pl-2">
+              <ArrowRightIcon />
+            </span>
+          </Button>
+        </a>
       </div>
       <Modal
         isOpen={modalIsOpen}

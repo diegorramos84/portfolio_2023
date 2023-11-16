@@ -19,7 +19,7 @@ const ProgressBar = ({ progress, projectName, techArray, projectLink }) => {
     <a
       href={projectLink}
       target="_blank"
-      className="progress-container w-80 mb-2 hover:scale-105"
+      className="progress-container w-full lg:w-80 mb-2 hover:scale-105"
     >
       <div class="flex justify-between mb-1">
         <div class="progress-text-left flex ">

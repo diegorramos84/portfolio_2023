@@ -1,24 +1,29 @@
 ---
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
 import ModeToggle from '@/components/theme/ModeToggle';
+import { Button } from "@/components/ui/button"
+
+
 ---
 
 <div class="container py-4">
   <Astronav>
-    <div class="lg:flex p-5 bg-card rounded-xl text-card-foreground shadow-lg border  border-darkReaderBorder gap-4 ">
+    <div class="lg:flex lg:flex-row justify-between items-center align-middle p-5 bg-card rounded-xl text-card-foreground shadow-lg border  border-darkReaderBorder hover:border-greenish">
       <div class="flex w-full justify-between">
-        <h1 class="text-4xl font-custom">Diego <span class="text-greenish">Ramos</span></h1>
-        <ModeToggle client:load/>
+        <a href="/">
+          <h1 class="text-4xl font-custom">Diego <span class="text-greenish">Ramos</span></h1>
+        </a>
+
         <div class=" lg:hidden flex items-center">
           <MenuIcon class="w-7 h-full text-gray-800" />
         </div>
       </div>
-        <MenuItems class="hidden lg:flex items-center">
-          <ul class="flex flex-col lg:flex-row lg:gap-5">
-            <li><a href="/">[home]</a></li>
-            <li><a href="/projects_archive">[archive]</a></li>
-            <li><a href="/about">[about]</a></li>
-            <li><a href="/resume">[resume]</a></li>
+        <MenuItems class="hidden lg:flex">
+          <ul class="flex flex-col lg:flex-row">
+            <!-- <li><a href="/about"><Button variant="link" type="button">about</Button></a></li>
+            <li><a href="/resume"><Button variant="link">resume</Button></a></li>
+            <li><a href="/projects_archive"><Button variant="link">archive</Button></a></li> -->
+            <li><ModeToggle client:load/></li>
           </ul>
         </MenuItems>
     </div>

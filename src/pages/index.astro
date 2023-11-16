@@ -13,8 +13,8 @@ import { PaperPlaneIcon } from '@radix-ui/react-icons';
 
 
 ---
-<!-- <script>
-  import { animate, stagger, scroll, timeline } from "motion"
+<script>
+  import { animate, scroll, timeline } from "motion"
 
   scroll(animate(
   ".recent-projects",
@@ -64,7 +64,7 @@ import { PaperPlaneIcon } from '@radix-ui/react-icons';
   defaultOptions: { ease: "ease-in-out" },
 })
 
-</script> -->
+</script>
 
 <Layout>
   <div class="main flex flex-col gap-4 mb-20">
@@ -72,19 +72,19 @@ import { PaperPlaneIcon } from '@radix-ui/react-icons';
       <div class="hero w-full lg:py-20 lg:pt-10 lg:px-20 flex bg-card rounded-xl text-card-foreground shadow-lg border border-darkReaderBorder hover:border-greenish">
         <div class="land-intro flex flex-col text-center lg:text-left">
           <div class="fullstack-header mb-5">
-            <h1 class="text-3xl lg:text-7xl font-extrabold">Full Stack Developer</h1>
+            <h1 class="text-2xl lg:text-7xl font-extrabold">Full Stack Developer</h1>
           </div>
           <div class="fullstack-content flex flex-row justify-between gap-8">
-            <div class="fullstack-content-image">
-              <div class="land-image lg:flex hidden">
+            <div class="fullstack-content-image hidden lg:flex ">
+              <div class="land-image">
                 <Image src={myImage} alt="diego_profile_img" width="1000" class="rounded-lg shadow"/>
               </div>
             </div>
             <div class="fullstack-content-text flex flex-col justify-between items-center">
               <div class="fullstack-content-description">
-                <p class="text-xl lg:text-3xl">I'm a full-stack developer based in London who is addicted to solving problems and learning new things</p>
+                <p class="lg:text-3xl mb-5">I'm a full-stack developer based in London who is addicted to solving problems and learning new things</p>
               </div>
-              <div class="fullstack-content-button">
+              <div class="fullstack-content-button mb-5">
                 <Button className="lg:text-xl font-bold lg:py-7 lg flex justify-around gap-2">
                   <span>Send my a message</span>
                   <PaperPlaneIcon  />
@@ -102,7 +102,7 @@ import { PaperPlaneIcon } from '@radix-ui/react-icons';
         <div class="socials lg:h-1/3 flex flex-col justify-center items-center">
           <Socials/>
         </div>
-        <div class="now lg:h-1/3 bg-card rounded-xl text-card-foreground box-border flex justify-between shadow-lg border border-darkReaderBorder  hover:border-greenish">
+        <div class="now lg:h-1/3 bg-card rounded-xl text-card-foreground box-border flex justify-between shadow-lg border border-darkReaderBorder hover:border-greenish">
           <Now client:load/>
         </div>
       </div>
