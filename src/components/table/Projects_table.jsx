@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { ArrowTopRightIcon } from "@radix-ui/react-icons"
 import { projects } from "./projects_list"
 import {
   flexRender,
@@ -43,8 +44,15 @@ const columns = [
     footer: (info) => info.column.id,
   }),
   columnHelper.accessor("GitHub", {
-    header: () => "GitHub",
-    cell: (info) => info.renderValue(),
+    header: () => "Link",
+    cell: (info) => (
+      <a href={info.renderValue()} target="_blank">
+        <span className="flex text-muted-foreground group hover:text-greenish">
+          GitHub{" "}
+          <ArrowTopRightIcon className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+        </span>
+      </a>
+    ),
     footer: (info) => info.column.id,
   }),
 ]
@@ -58,7 +66,7 @@ const Projects_table = () => {
   })
 
   return (
-    <div className="rounded-xl border bg-card text-card-foreground shadow-lg border-darkReaderBorder">
+    <div className="rounded-xl border bg-card text-card-foreground shadow-lg border-darkReaderBorder p-2">
       <Table className="">
         <TableHeader>
           {table.getHeaderGroups().map((headerGroup) => (

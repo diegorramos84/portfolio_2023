@@ -83,7 +83,7 @@ const RecentProjects = () => {
             <div class="badges flex gap-2">
               <Badges type="python" text="python" />
               <Badges type="django" text="django" />
-              <Badges type="js" text="javascript" />
+              <Badges type="javascript" text="javascript" />
               <Badges type="react" text="react" />
             </div>
           </CardFooter>
@@ -136,7 +136,7 @@ const RecentProjects = () => {
             <div className="badges flex gap-2">
               <Badges type="python" text="python" />
               <Badges type="flask" text="flask" />
-              <Badges type="js" text="javascript" />
+              <Badges type="javascript" text="javascript" />
               <Badges type="react" text="react" />
             </div>
           </CardFooter>
@@ -186,7 +186,7 @@ const RecentProjects = () => {
           </CardContent>
           <CardFooter className="mt-auto">
             <div className="badges flex gap-2">
-              <Badges type="js" text="javascript" />
+              <Badges type="javascript" text="javascript" />
               <Badges type="react" text="react" />
               <Badges type="node" text="node" />
             </div>

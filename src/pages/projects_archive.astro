@@ -1,7 +1,6 @@
 ---
 import ProjectsTable from "@/components/table/Projects_table.jsx";
 import { projects } from "../components/table/projects_list"
-import columns from "../components/table/columns"
 
 import Layout from "@/layouts/Layout.astro";
 import '@/styles/globals.css'
@@ -11,7 +10,7 @@ const data = projects
 
 <Layout>
   <div class="container">
-    <h2 class="text-xl lg:text-5xl py-4 text-center">Projects Archive</h2>
+    <h2 class="text-xl lg:text-5xl py-4 text-center">All Projects</h2>
     <ProjectsTable/>
   </div>
 </Layout>

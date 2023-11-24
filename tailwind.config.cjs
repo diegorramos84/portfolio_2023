@@ -45,6 +45,7 @@ module.exports = {
       reactBGColor: "#00bcd4",
       reactTextColor: "#222222",
       nodeBGColor: "#8CC84B",
+      railsBGColor: "red",
       flaskBGColor: "#333333",
       grayMuted: "#666666",
       darkReaderBorder: "#7F7668",
