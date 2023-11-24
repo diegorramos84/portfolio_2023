@@ -39,18 +39,18 @@ const NowMovement = () => (
 )
 const Now = () => {
   return (
-    <div class="now-container w-full p-4">
-      <div class="now flex justify-between">
-        <div class="now-text flex mb-2">
-          <h2 class="text-2xl mr-1">Now</h2>
+    <div className="now-container w-full p-4">
+      <div className="now flex justify-between">
+        <div className="now-text flex mb-2">
+          <h2 className="text-2xl mr-1">Now</h2>
           <NowMovement />
         </div>
-        <div class="now-icon flex">
-          <span class="live-icon absolute inline-flex rounded-full h-3 w-3 bg-greenish animate-ping opacity-75"></span>
-          <span class="live-icon relative inline-flex rounded-full h-3 w-3 bg-greenish"></span>
+        <div className="now-icon flex">
+          <span className="live-icon absolute inline-flex rounded-full h-3 w-3 bg-greenish animate-ping opacity-75"></span>
+          <span className="live-icon relative inline-flex rounded-full h-3 w-3 bg-greenish"></span>
         </div>
       </div>
-      <div class="w-full flex flex-col items-center">
+      <div className="w-full flex flex-col items-center">
         <ProgressBar
           progress={project1.progress}
           projectName={project1.name}

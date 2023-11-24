@@ -5,10 +5,11 @@ import { projects } from "../components/table/projects_list"
 import Layout from "@/layouts/Layout.astro";
 import '@/styles/globals.css'
 const data = projects
+const title = 'All Projects Archive'
 ---
 
 
-<Layout>
+<Layout title={title}>
   <div class="container">
     <h2 class="text-xl lg:text-5xl py-4 text-center">All Projects</h2>
     <ProjectsTable/>

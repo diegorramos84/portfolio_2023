@@ -48,7 +48,7 @@ const RecentProjects = () => {
                   href="https://github.com/diegorramos84/room-music"
                   target="a_blank"
                 >
-                  <i class="devicon-github-original text-2xl lg:text-2xl "></i>
+                  <i className="devicon-github-original text-2xl lg:text-2xl "></i>
                 </a>
               </span>
             </CardTitle>
@@ -80,7 +80,7 @@ const RecentProjects = () => {
             </p>
           </CardContent>
           <CardFooter className="mt-auto">
-            <div class="badges flex gap-2">
+            <div className="badges flex gap-2">
               <Badges type="python" text="python" />
               <Badges type="django" text="django" />
               <Badges type="javascript" text="javascript" />
@@ -99,7 +99,7 @@ const RecentProjects = () => {
                   href="https://github.com/diegorramos84/Homework-Heroes"
                   target="a_blank"
                 >
-                  <i class="devicon-github-original text-2xl lg:text-2xl "></i>
+                  <i className="devicon-github-original text-2xl lg:text-2xl "></i>
                 </a>
               </span>
             </CardTitle>
@@ -152,7 +152,7 @@ const RecentProjects = () => {
                   href="https://github.com/JackDMoore/Brainiac-Brigade"
                   target="a_blank"
                 >
-                  <i class="devicon-github-original text-2xl lg:text-2xl "></i>
+                  <i className="devicon-github-original text-2xl lg:text-2xl "></i>
                 </a>
               </span>
             </CardTitle>

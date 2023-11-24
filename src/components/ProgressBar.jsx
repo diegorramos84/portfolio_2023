@@ -21,18 +21,18 @@ const ProgressBar = ({ progress, projectName, techArray, projectLink }) => {
       target="_blank"
       className="progress-container w-full lg:w-80 mb-2 hover:scale-105"
     >
-      <div class="flex justify-between mb-1">
-        <div class="progress-text-left flex ">
-          <span class="text-base font-medium mr-2">{projectName}</span>
-          <span class="tech-icons flex">
+      <div className="flex justify-between mb-1">
+        <div className="progress-text-left flex ">
+          <span className="text-base font-medium mr-2">{projectName}</span>
+          <span className="tech-icons flex">
             {matchingIcons.map((i) => (
-              <img class="mr-1" key={i.name} src={i.src} alt={i.name} />
+              <img className="mr-1" key={i.name} src={i.src} alt={i.name} />
             ))}
           </span>
         </div>
-        <span class="text-sm font-medium">{progress}</span>
+        <span className="text-sm font-medium">{progress}</span>
       </div>
-      <div class="progress-bar rounded-full h-2.5 border w-full">
+      <div className="progress-bar rounded-full h-2.5 border w-full">
         <Progress value={progress} />
       </div>
     </a>

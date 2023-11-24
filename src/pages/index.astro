@@ -11,6 +11,7 @@ import RecentProjects from '@/components/RecentProjects.jsx'
 import MouseAnimation from '@/components/MouseAnimation.astro'
 import { PaperPlaneIcon } from '@radix-ui/react-icons';
 
+const title = "Diego's Portfolio"
 
 ---
 <script>
@@ -66,7 +67,7 @@ import { PaperPlaneIcon } from '@radix-ui/react-icons';
 
 </script>
 
-<Layout>
+<Layout title={title}>
   <div class="main flex flex-col gap-4 mb-20">
     <div class="container flex flex-col lg:flex-row lg:justify-around gap-4">
       <div class="hero w-full lg:py-20 lg:pt-10 lg:px-20 flex bg-card rounded-xl text-card-foreground shadow-lg border border-darkReaderBorder hover:border-greenish">
@@ -82,7 +83,7 @@ import { PaperPlaneIcon } from '@radix-ui/react-icons';
             </div>
             <div class="fullstack-content-text flex flex-col justify-between items-center">
               <div class="fullstack-content-description">
-                <p class="lg:text-3xl mb-5">I'm a full-stack developer based in London who is driven by Problem-Solving and Continual Learning in Tech</p>
+                <p class="lg:text-3xl mb-5">I'm a full-stack developer based in London who is driven by problem-solving and continual learning in tech</p>
               </div>
               <div class="fullstack-content-button mb-5">
                 <Button className="lg:text-xl font-bold lg:py-7 lg flex justify-around gap-2">
