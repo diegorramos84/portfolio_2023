@@ -15,7 +15,7 @@ const Badges = ({ type, text }) => {
   const badgeClassName = badgeClassNames[type] || ""
 
   return (
-    <Badge className={`${badgeClassName} opacity-80 cursor-default`}>
+    <Badge className={`${badgeClassName} opacity-80 mr-1 cursor-default`}>
       {text}
     </Badge>
   )

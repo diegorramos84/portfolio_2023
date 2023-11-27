@@ -12,14 +12,14 @@ import { InfoCircledIcon } from "@radix-ui/react-icons"
 const project1 = {
   name: "FinanceApp",
   tech: ["django", "react"],
-  progress: 40,
-  projectLink: "https://github.com/diegorramos84/finance-dashboard",
+  progress: 20,
+  projectLink: "https://github.com/diegorramos84/personalfinanceapp",
 }
 
 const project2 = {
   name: "Portfolio v2",
   tech: ["js", "react"],
-  progress: 20,
+  progress: 90,
   projectLink: "https://github.com/diegorramos84/portfolio_2023",
 }
 
@@ -57,12 +57,12 @@ const Now = () => {
           techArray={project1.tech}
           projectLink={project1.projectLink}
         />
-        <ProgressBar
+        {/* <ProgressBar
           progress={project2.progress}
           projectName={project2.name}
           techArray={project2.tech}
           projectLink={project2.projectLink}
-        />
+        /> */}
       </div>
     </div>
   )
