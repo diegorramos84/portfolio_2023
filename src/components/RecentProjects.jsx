@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { ArrowRightIcon } from "@radix-ui/react-icons"
+import { ArrowRightIcon, GitHubLogoIcon } from "@radix-ui/react-icons"
 
 import ReactPlayer from "react-player"
 import Modal from "react-modal"
@@ -48,7 +48,7 @@ const RecentProjects = () => {
                   href="https://github.com/diegorramos84/room-music"
                   target="a_blank"
                 >
-                  <i className="devicon-github-original text-2xl lg:text-2xl "></i>
+                  <GitHubLogoIcon />
                 </a>
               </span>
             </CardTitle>
@@ -99,7 +99,7 @@ const RecentProjects = () => {
                   href="https://github.com/diegorramos84/Homework-Heroes"
                   target="a_blank"
                 >
-                  <i className="devicon-github-original text-2xl lg:text-2xl "></i>
+                  <GitHubLogoIcon />
                 </a>
               </span>
             </CardTitle>
@@ -152,7 +152,7 @@ const RecentProjects = () => {
                   href="https://github.com/JackDMoore/Brainiac-Brigade"
                   target="a_blank"
                 >
-                  <i className="devicon-github-original text-2xl lg:text-2xl "></i>
+                  <GitHubLogoIcon />
                 </a>
               </span>
             </CardTitle>

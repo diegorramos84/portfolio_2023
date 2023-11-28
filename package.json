@@ -29,6 +29,7 @@
     "astro-link": "^1.2.1",
     "astro-navbar": "^2.2.1",
     "astro-seo": "^0.8.0",
+    "astro-tooltips": "^0.6.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "motion": "^10.16.4",
@@ -42,6 +43,7 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
-    "@types/react-modal": "^3.16.2"
+    "@types/react-modal": "^3.16.2",
+    "vite-plugin-svgr": "^4.2.0"
   }
 }

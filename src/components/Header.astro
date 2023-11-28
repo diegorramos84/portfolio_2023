@@ -1,6 +1,7 @@
 ---
 import { SEO } from "astro-seo";
 const { title, seoDesc } = Astro.props
+import { Tooltips } from 'astro-tooltips';
 ---
 
 <head>
@@ -17,8 +18,21 @@ const { title, seoDesc } = Astro.props
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,500&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/597a9d890b.js" crossorigin="anonymous"></script>
+  <Tooltips interactive={false} theme='myCustomTheme'/>
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
 
   <title>{ title }</title>
 </head>
+
+<style>
+  .tippy-box[data-theme~='myCustomTheme'] {
+  background-color: yellow;
+  color: yellow;
+  border: 1px solid var(--vscode-editorWidget-border);
+  border-radius: 0.15rem;
+  padding: 0.5rem;
+  word-wrap: break-word;
+}
+</style>

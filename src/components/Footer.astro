@@ -1,20 +1,10 @@
 ---
 import { Image } from "astro:assets";
-import btfImage from "../../public/btf.png"
+import TimeMachineSvg from "../../public/80s-animate.svg"
+
 ---
-
-<footer>
-  <div class="flex justify-center items-center">
-    <div class="flex-grow"></div>
-      <p class="text-muted-foreground mr-auto">
-        @2023 Diego Ramos. All rights reserved
-      </p>
-      <div class="flex-grow"></div>
-    <Image src={btfImage} alt="back to the future delorean image" width="100" class="ml-auto"/>
-  </div>
-</footer>
-
-<style>
+{
+  <style>
   footer {
     display: flex;
     flex-direction: column;
@@ -24,3 +14,27 @@ import btfImage from "../../public/btf.png"
     padding: 3rem 2rem 3rem;
   }
 </style>
+}
+
+
+
+{
+  <footer>
+  <div class="flex justify-center items-center">
+    <div class="flex-grow"></div>
+    <div>
+      <p class="text-muted-foreground mr-auto">
+        @2023 Diego Ramos. All rights reserved -
+      </p>
+      <a href="https://storyset.com/transport" class="text-muted-foreground"> Travel illustrations by Storyset</a>
+
+    </div>
+      <div class="flex-grow"></div>
+
+            <a href="https://v1.diegorramos.com">
+              <Image src={TimeMachineSvg} title= "Check previous portfolio version" alt="back to the future delorean image" width="100" class="ml-auto"/>
+            </a>
+
+  </div>
+</footer>
+}
