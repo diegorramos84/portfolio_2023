@@ -215,8 +215,8 @@ const RecentProjects = () => {
             backgroundColor: "rgba(0,0,0,0.6)",
           },
           content: {
-            width: "850px",
-            height: "600px",
+            // width: "850px",
+            height: "800px",
             margin: "auto", // Center the modal horizontally
             padding: "0px",
             border: "none",
